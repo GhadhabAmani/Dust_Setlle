@@ -18,7 +18,7 @@ public class ShipController : MonoBehaviour
     void Update()
     {
 
-#if ((!UNITY_EDITOR) && (UNITY_ANDROID || UNITY_IOS) || REMOTE)
+#if ((!UNITY_EDITOR) && (UNITY_ANDROID || UNITY_IOS) || !REMOTE)
         if (Input.touchCount > 0)
         {
             Touch touch = Input.touches[0];
