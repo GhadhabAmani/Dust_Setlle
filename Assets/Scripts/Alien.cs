@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -10,8 +11,7 @@ public class Alien : MonoBehaviour
 {
     void Start()
     {
-      
-      gameObject.GetComponentInChildren<TextMesh>().text = Random.Range(1,20).ToString();
+      gameObject.GetComponentInChildren<TextMeshPro>().text = Random.Range(1,9).ToString();
     }
    
 
