@@ -10,7 +10,7 @@ public class Alien : MonoBehaviour
 {
     void Start()
     {
-        // Set the text of the attached Text mesh
+      
       gameObject.GetComponentInChildren<TextMesh>().text = Random.Range(1,20).ToString();
     }
    

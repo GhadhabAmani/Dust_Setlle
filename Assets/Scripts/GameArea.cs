@@ -37,7 +37,7 @@ public class GameArea : MonoBehaviour
     {
         Vector3 pos;
         float x = Random.Range(-size.x / 2, size.x/2 );
-        float y = Random.Range(0.3f, size.y/2);
+        float y = Random.Range(3.5f, size.y/2);
         pos = new Vector3(x, y, 0);
         return pos;
     }
