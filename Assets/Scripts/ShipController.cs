@@ -26,7 +26,8 @@ public class ShipController : MonoBehaviour
             {
                 _firing = value;
                 if (_firing)
-                    _weapon.InvokeRepeating("Fire", 1f / _weapon.firingRate, 1f / _weapon.firingRate);
+                    //_weapon.InvokeRepeating("Fire", 1f / _weapon.firingRate, 1f / _weapon.firingRate);
+                    _weapon.Invoke("Fire",  1f / _weapon.firingRate);
             }
         }
     }

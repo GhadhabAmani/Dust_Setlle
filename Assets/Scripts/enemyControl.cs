@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class enemyControl : MonoBehaviour
 {
     private Text enemyNumberText;
-    private int number;
+    
 
     private  int _number ;
     public  int Number
@@ -27,7 +27,6 @@ public class enemyControl : MonoBehaviour
     void Start()
     {
         enemyNumberText = gameObject.GetComponentInChildren<Text>();
-        Debug.Log(number);
         random();
         enemyNumberText.text = Number.ToString();
     }
