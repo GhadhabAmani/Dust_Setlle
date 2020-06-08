@@ -8,6 +8,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// Rotate a spwan  and display Random Text Number on it 
@@ -15,6 +16,8 @@ using UnityEngine.Video;
 public class Alien : MonoBehaviour, INotifyPropertyChanged
 {
     public GameObject money;
+    public float MoveSpeed = 0.5f;
+    public Transform newPos;
     private int _damageNumber;
     public int DamageNumber
     {
@@ -40,6 +43,8 @@ public class Alien : MonoBehaviour, INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
     void Start()
     {
+        int rnd = Random.Range(1, 7);
+        gameObject.GetComponentInChildren<TextMeshPro>().text = rnd.ToString();
         DamageNumber = Int32.Parse(gameObject.GetComponentInChildren<TextMeshPro>().text);
     }
     private void OnCollisionEnter2D(Collision2D collision)
