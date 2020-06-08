@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0ce4c932176d3dc44874e3b64ce4a803
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Samble Tracie_Swash
+  fontNames:
+  - Samble Tracie_Swash
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e89a6803b4488594b88687241f9794f1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
