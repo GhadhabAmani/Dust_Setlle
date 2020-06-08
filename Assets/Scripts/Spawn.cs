@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
     [Header("SPAWNING")]
     public GameObject enemy;
     [Range(0.001f, 100)] public float rate;
-    public int numberOfEnemies;
+    [Range(0, 30)] public int numberOfEnemies;
     public bool infinitie = false;
     private Vector3 _position;
     public GameArea gameArea;

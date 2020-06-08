@@ -52,7 +52,6 @@ public class Alien : MonoBehaviour, INotifyPropertyChanged
         if (collision.gameObject.tag == "Weapon")
         {
             GameObject obj = GameObject.FindGameObjectWithTag("Weapon");
-            Debug.Log("collisionnnnnn");
             DamageNumber--;
             OnPropertyChanged("Number Has changed");
             gameObject.GetComponentInChildren<TextMeshPro>().text = DamageNumber.ToString();
