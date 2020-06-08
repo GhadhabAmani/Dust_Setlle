@@ -15,9 +15,11 @@ using Random = UnityEngine.Random;
 /// </summary>
 public class Alien : MonoBehaviour, INotifyPropertyChanged
 {
+    int damage;
     public GameObject money;
     public float MoveSpeed = 0.5f;
     public Transform newPos;
+
     private int _damageNumber;
     public int DamageNumber
     {
@@ -42,26 +44,34 @@ public class Alien : MonoBehaviour, INotifyPropertyChanged
     }
     public event PropertyChangedEventHandler PropertyChanged;
     void Start()
+        
     {
         int rnd = Random.Range(1, 7);
         gameObject.GetComponentInChildren<TextMeshPro>().text = rnd.ToString();
-        DamageNumber = Int32.Parse(gameObject.GetComponentInChildren<TextMeshPro>().text);
+        DamageNumber = damage = Int32.Parse(gameObject.GetComponentInChildren<TextMeshPro>().text);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+    
         if (collision.gameObject.tag == "Weapon")
         {
             GameObject obj = GameObject.FindGameObjectWithTag("Weapon");
             DamageNumber--;
             OnPropertyChanged("Number Has changed");
             gameObject.GetComponentInChildren<TextMeshPro>().text = DamageNumber.ToString();
-            Debug.Log(DamageNumber);
+            //Debug.Log(DamageNumber);
             Destroy(obj);
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            GameManager.Lives = 0;
         }
         if (DamageNumber == 0)
         {
             Destroy(gameObject);
             Instantiate(money, transform.position, transform.rotation);
+            GameManager.Score += damage * 10;
+
         }
     }
 
