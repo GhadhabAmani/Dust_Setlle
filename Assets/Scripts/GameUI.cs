@@ -12,15 +12,15 @@ public class GameUI : MonoBehaviour
     public Color scoreColor;
     private void Start()
     {
-        score.text = string.Format($"SCORE : {0} ", GameManager.Score).ToString();
-        highScore.text = string.Format($"HIGHSCORE : {0} ", GameManager.HighScore).ToString();
+        score.text = string.Format("SCORE : {0} ", GameManager.Score).ToString();
+        highScore.text = string.Format("HIGHSCORE : {0} ", GameManager.HighScore).ToString();
         GameManager.ScoreChanged += delegate (int _score)
         {
-            score.text = string.Format($"SCORE : {0} ", _score).ToString();
+            score.text = string.Format("SCORE : {0} ", _score).ToString();
         };
         GameManager.highScoreChanged += delegate (int _highScore)
         {
-            highScore.text = string.Format($"HIGHSCORE : {0}", _highScore).ToString();
+            highScore.text = string.Format("HIGHSCORE : {0}", _highScore).ToString();
         };
 
     }

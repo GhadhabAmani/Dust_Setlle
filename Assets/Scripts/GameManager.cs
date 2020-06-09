@@ -15,7 +15,7 @@ public static class GameManager
         Paused,
         GameOver,
     }
-    private static int _highScore =30000;
+    private static int _highScore =100;
     public static int HighScore
     {
         get { return _highScore; }
@@ -24,8 +24,7 @@ public static class GameManager
             if (_highScore != value)
             {
                 _highScore = value;
-
-                PlayerPrefs.SetInt("highScore", _highScore);
+                Debug.Log(value);
                 if (highScoreChanged != null)
                 {
                     highScoreChanged.Invoke(_highScore);
