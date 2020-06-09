@@ -4,8 +4,18 @@ using UnityEngine;
 
 public static class GameManager 
 {
+    public delegate void ScoreChange(int score);
+    static public event ScoreChange ScoreChanged;
 
-    private static int _highScore = 200;
+    public delegate void highScoreChange(int score);
+    static public event highScoreChange highScoreChanged;
+    enum STATE
+    {
+        Running,
+        Paused,
+        GameOver,
+    }
+    private static int _highScore =30000;
     public static int HighScore
     {
         get { return _highScore; }
@@ -14,7 +24,12 @@ public static class GameManager
             if (_highScore != value)
             {
                 _highScore = value;
+
                 PlayerPrefs.SetInt("highScore", _highScore);
+                if (highScoreChanged != null)
+                {
+                    highScoreChanged.Invoke(_highScore);
+                }
             }
         }
     }
@@ -28,10 +43,13 @@ public static class GameManager
             {
                 _score = value;
                 Debug.Log(value);
-                if (_score == HighScore)
+                if (ScoreChanged !=null)
+                {
+                    ScoreChanged.Invoke(_score);
+                }
+                if (_score >= HighScore)
                 {
                     HighScore = _score;
-
                 }
             }
         }
