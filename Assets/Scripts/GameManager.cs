@@ -15,7 +15,7 @@ public static class GameManager
         Paused,
         GameOver,
     }
-    private static int _highScore =100;
+    private static int _highScore =500;
     public static int HighScore
     {
         get { return _highScore; }
